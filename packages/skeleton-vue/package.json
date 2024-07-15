@@ -1,7 +1,7 @@
 {
   "name": "@code-coaching/skeleton-vue",
   "type": "module",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
