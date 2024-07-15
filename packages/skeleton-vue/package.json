@@ -1,7 +1,7 @@
 {
   "name": "@code-coaching/skeleton-vue",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -16,6 +16,9 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
+    "version:patch": "npm version patch && git push --follow-tags",
+    "version:minor": "npm version minor && git push --follow-tags",
+    "version:major": "npm version major && git push --follow-tags",
     "publish": "npm publish --scope=code-coaching --access public"
   },
   "dependencies": {
