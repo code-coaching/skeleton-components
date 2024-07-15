@@ -16,9 +16,9 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "version:patch": "npm version patch && git add package.json && git commit -m \"version: patch\" && git push --follow-tags",
-    "version:minor": "npm version minor && git add package.json && git commit -m \"version: minor\" && git push --follow-tags",
-    "version:major": "npm version major && git add package.json && git commit -m \"version: major\" && git push --follow-tags",
+    "version:patch": "npm version patch && git add package.json && git commit -m \"version: patch\" && git push",
+    "version:minor": "npm version minor && git add package.json && git commit -m \"version: minor\" && git push",
+    "version:major": "npm version major && git add package.json && git commit -m \"version: major\" && git push",
     "version:publish": "npm publish --scope=code-coaching --access public"
   },
   "dependencies": {
