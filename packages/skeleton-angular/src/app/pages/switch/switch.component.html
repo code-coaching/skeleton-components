@@ -2,27 +2,36 @@
   <header>
     <h1 class="h1">Switch</h1>
   </header>
-  <!-- <pre class="pre">{{
-    JSON.stringify({ disturb, notifications, disabled, icons, lightswitch, compact }, null, 2)
-  }}</pre> -->
-  <!-- <section class="space-y-4">
+  <pre class="pre">
+    {{
+      JSON.stringify(
+        { disturb, notifications, disabled, icons, lightswitch, compact },
+        null,
+        2
+      )
+    }}
+  </pre>
+  <section class="space-y-4">
     <label for="disturb" class="flex items-center justify-between gap-4 label">
       <p>Defaults to inactive state.</p>
       <switch
         id="disturb"
         name="disturb"
-        :checked="disturb"
-        @on-checked-change="disturb = $event"
+        [checked]="disturb"
+        (onCheckedChange)="disturb = $event"
       ></switch>
     </label>
     <hr class="hr" />
-    <label for="notifications" class="flex items-center justify-between gap-4 label">
+    <label
+      for="notifications"
+      class="flex items-center justify-between gap-4 label"
+    >
       <p>Defaults to active state.</p>
       <switch
         id="notifications"
         name="notifications"
-        :checked="notifications"
-        @onCheckedChange="notifications = $event"
+        [checked]="notifications"
+        (onCheckedChange)="notifications = $event"
       ></switch>
     </label>
     <hr class="hr" />
@@ -31,10 +40,10 @@
       <switch
         id="disabled"
         name="disabled"
-        :checked="disabled"
-        @on-checked-change="disabled = $event"
-        disabled
-      ></switch>  
+        [checked]="disabled"
+        (onCheckedChange)="disabled = $event"
+        [disabled]="true"
+      ></switch>
     </label>
     <hr class="hr" />
     <label for="icons" class="flex items-center justify-between gap-4 label">
@@ -43,15 +52,15 @@
         id="icons"
         name="icons"
         stateActive="bg-secondary-500"
-        :checked="icons"
-        @on-checked-change="icons = $event"
+        [checked]="icons"
+        (onCheckedChange)="icons = $event"
       >
-        <template #inactiveChild>
-          <IconX :size="14" />
-        </template>
-        <template #activeChild>
-          <IconCheck color="blue" :size="14" />
-        </template>
+        <ng-template #inactiveChild>
+          <lucide-angular name="x" size="14"></lucide-angular>
+        </ng-template>
+        <ng-template #activeChild>
+          <lucide-angular name="check" size="14" color="blue"></lucide-angular>
+        </ng-template>
       </switch>
     </label>
     <hr class="hr" />
@@ -61,15 +70,15 @@
         id="mode"
         name="mode"
         stateActive="bg-surface-200"
-        :checked="lightswitch"
-        @on-checked-change="lightswitch = $event"
+        [checked]="lightswitch"
+        (onCheckedChange)="lightswitch = $event"
       >
-        <template #inactiveChild>
-          <IconMoon :size="14" />
-        </template>
-        <template #activeChild>
-          <IconSun :size="14" />
-        </template>
+        <ng-template #inactiveChild>
+          <lucide-angular name="moon" size="14"></lucide-angular>
+        </ng-template>
+        <ng-template #activeChild>
+          <lucide-angular name="sun" size="14"></lucide-angular>
+        </ng-template>
       </switch>
     </label>
     <hr class="hr" />
@@ -78,18 +87,18 @@
       <switch
         id="compact"
         name="compact"
-        :checked="compact"
-        @on-checked-change="compact = $event"
+        [checked]="compact"
+        (onCheckedChange)="compact = $event"
         width="w-9"
-        compact
+        [compact]="true"
       >
-        <template #inactiveChild>
-          <IconFrown :size="18" />
-        </template>
-        <template #activeChild>
-          <IconSmile :size="18" />
-        </template>
+        <ng-template #inactiveChild>
+          <lucide-angular name="frown" size="18"></lucide-angular>
+        </ng-template>
+        <ng-template #activeChild>
+          <lucide-angular name="smile" size="18"></lucide-angular>
+        </ng-template>
       </switch>
     </label>
-  </section> -->
+  </section>
 </div>
