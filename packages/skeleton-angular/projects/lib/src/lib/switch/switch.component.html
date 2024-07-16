@@ -1,0 +1,34 @@
+<button
+  type="button"
+  [class]="buttonClass"
+  role="switch"
+  [attr.aria-checked]="checked"
+  [attr.aria-labelledby]="labelledby"
+  [attr.aria-describedby]="describedby"
+  tabindex="0"
+  (click)="toggle()"
+  data-testid="switch"
+>
+  <!-- Input (hidden) -->
+  <input
+    type="checkbox"
+    [id]="id"
+    [name]="name"
+    [checked]="checked"
+    class="hidden"
+    [disabled]="disabled"
+  />
+  <!-- Thumb -->
+  <div [class]="thumbClass">
+    @if (!checked && inactiveChild) {
+      <span [class]="iconInactiveBase">
+        <ng-content select="[data-inactive-child]"></ng-content>
+      </span>
+    }
+    @if (checked && activeChild) {
+      <span [class]="iconActiveBase">
+        <ng-content select="[data-active-child]"></ng-content>
+      </span>
+    }
+  </div>
+</button>
