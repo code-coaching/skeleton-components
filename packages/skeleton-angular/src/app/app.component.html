@@ -17,18 +17,12 @@
         [checked]="lightMode"
         (onCheckedChange)="onModeChange($event)"
       >
-        <lucide-angular
-          #inactiveChild
-          data-inactive-child
-          name="moon"
-          size="14"
-        ></lucide-angular>
-        <lucide-angular
-          #activeChild
-          data-active-child
-          name="sun"
-          size="14"
-        ></lucide-angular>
+        <ng-template #inactiveChild>
+          <lucide-angular name="moon" size="14"></lucide-angular>
+        </ng-template>
+        <ng-template #activeChild>
+          <lucide-angular name="sun" size="14"></lucide-angular>
+        </ng-template>
       </switch>
     </label>
     <hr class="hr" />

@@ -22,12 +22,12 @@
   <div [class]="thumbClass">
     @if (!checked && inactiveChild) {
       <span [class]="iconInactiveBase">
-        <ng-content select="[data-inactive-child]"></ng-content>
+        <ng-container [ngTemplateOutlet]="inactiveChild"></ng-container>
       </span>
     }
     @if (checked && activeChild) {
       <span [class]="iconActiveBase">
-        <ng-content select="[data-active-child]"></ng-content>
+        <ng-container [ngTemplateOutlet]="activeChild"></ng-container>
       </span>
     }
   </div>

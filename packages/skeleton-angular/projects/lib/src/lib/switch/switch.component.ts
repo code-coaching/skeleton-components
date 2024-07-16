@@ -6,14 +6,14 @@ import {
   Input,
   Output,
   TemplateRef,
-  ViewChild,
 } from '@angular/core';
 import { SwitchProps } from './types';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'switch',
   standalone: true,
-  imports: [],
+  imports: [NgTemplateOutlet],
   templateUrl: './switch.component.html',
   styleUrl: './switch.component.css',
 })
@@ -61,20 +61,17 @@ export class Switch {
   // onCheckedChange: () => {}
   @Output() onCheckedChange = new EventEmitter<boolean>();
 
-  // Snippets - This is achieved through (named) content projection 
+  // Snippets - This is achieved through (named) content projection
   // inactiveChild,
   // activeChild
-  @ContentChild('inactiveChild', { static: true }) inactiveChild!: ElementRef;
-  @ContentChild("activeChild", { static: true }) activeChild!: ElementRef;
-
+  @ContentChild('inactiveChild', { read: TemplateRef }) inactiveChild!: TemplateRef<any>;
+  @ContentChild('activeChild', { read: TemplateRef }) activeChild!: TemplateRef<any>;
 
   ngOnInit() {
     this.checked = this.checked;
     if (this.compact) {
       this.setCompactMode();
     }
-    console.log(this.activeChild);
-    console.log(this.inactiveChild);
   }
 
   setCompactMode() {
