@@ -33,7 +33,7 @@ const compact = ref(false);
           id="disturb"
           name="disturb"
           :checked="disturb"
-          @on-checked-change="disturb = $event"
+          @on-change="disturb = $event"
         />
       </label>
       <hr class="hr" />
@@ -43,7 +43,7 @@ const compact = ref(false);
           id="notifications"
           name="notifications"
           :checked="notifications"
-          @onCheckedChange="notifications = $event"
+          @on-change="notifications = $event"
         />
       </label>
       <hr class="hr" />
@@ -53,7 +53,7 @@ const compact = ref(false);
           id="disabled"
           name="disabled"
           :checked="disabled"
-          @on-checked-change="disabled = $event"
+          @on-change="disabled = $event"
           disabled
         />
       </label>
@@ -65,7 +65,7 @@ const compact = ref(false);
           name="icons"
           stateActive="bg-secondary-500"
           :checked="icons"
-          @on-checked-change="icons = $event"
+          @on-change="icons = $event"
         >
           <template #inactiveChild>
             <IconX :size="14" />
@@ -83,7 +83,7 @@ const compact = ref(false);
           name="mode"
           stateActive="bg-surface-200"
           :checked="lightswitch"
-          @on-checked-change="lightswitch = $event"
+          @on-change="lightswitch = $event"
         >
           <template #inactiveChild>
             <IconMoon :size="14" />
@@ -100,7 +100,7 @@ const compact = ref(false);
           id="compact"
           name="compact"
           :checked="compact"
-          @on-checked-change="compact = $event"
+          @on-change="compact = $event"
           width="w-9"
           compact
         >

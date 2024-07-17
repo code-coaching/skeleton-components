@@ -3,7 +3,7 @@ import { computed, onMounted, reactive } from 'vue';
 import type { SwitchProps } from './types';
 
 const emits = defineEmits<{
-  onCheckedChange: [value: boolean];
+  onChange: [value: boolean];
 }>();
 
 const props = withDefaults(defineProps<SwitchProps>(), {
@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<SwitchProps>(), {
   labelledby: undefined,
   describedby: undefined,
   // Root (Track)
-  base: 'inline cursor-pointer transition duration-200',
+  base: 'cursor-pointer transition duration-200',
   stateInactive: 'preset-filled-surface-200-800',
   stateActive: 'preset-filled-primary-500',
   stateDisabled: 'opacity-50 cursor-not-allowed',
@@ -41,7 +41,7 @@ const props = withDefaults(defineProps<SwitchProps>(), {
   iconActiveBase: 'pointer-events-none',
 
   // Events - This are Emits in Vue, found in the defineEmits in the script
-  // onCheckedChange: () => {}
+  // onChange: () => {}
 
   // Snippets - This are named slots in Vue, found in the template
   // inactiveChild,
@@ -76,10 +76,8 @@ function setCompactMode() {
 
 function toggle() {
   if (props.disabled) return;
-  console.log('here: ', state.checked);
   state.checked = !state.checked;
-  console.log('here: ', state.checked);
-  emits('onCheckedChange', state.checked);
+  emits('onChange', state.checked);
 }
 
 const rxTrackState = computed(() => (state.checked ? props.stateActive : props.stateInactive));
@@ -98,7 +96,6 @@ const rxDisabled = computed(() => (props.disabled ? props.stateDisabled : ''));
     :aria-checked="state.checked"
     :aria-labelledby="labelledby"
     :aria-describedby="describedby"
-    tabindex="0"
     @click="toggle"
     data-testid="switch"
   >
