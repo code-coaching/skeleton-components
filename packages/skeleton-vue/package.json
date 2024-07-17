@@ -54,7 +54,7 @@
   },
   "files": [
     "src/lib",
-    "!src/lib/__tests__",
+    "!src/lib/components/__tests__",
     "dist"
   ],
   "exports": {

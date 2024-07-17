@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { Switch } from '../..';
+import { Switch } from '../../..';
 import { mount } from '@vue/test-utils';
 
 describe('Switch', () => {
