@@ -1,3 +1,3 @@
-import Switch from './Switch/Switch.vue';
+import Switch from './components/Switch/Switch.vue';
 
 export { Switch };
