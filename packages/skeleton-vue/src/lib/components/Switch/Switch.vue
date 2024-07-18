@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { computed, onMounted, reactive } from 'vue';
+import { computed, onMounted, reactive, watch } from 'vue';
 import type { SwitchProps } from './types';
 
 const emits = defineEmits<{
   onChange: [value: boolean];
+  'update:checked': [value: boolean];
 }>();
 
 const props = withDefaults(defineProps<SwitchProps>(), {
@@ -62,6 +63,10 @@ onMounted(() => {
   if (props.compact) setCompactMode();
 });
 
+watch(() => props.checked, (newVal) => {
+  state.checked = newVal;
+});
+
 function setCompactMode() {
   Object.assign(state, {
     base: props.thumbBase,
@@ -78,6 +83,7 @@ function toggle() {
   if (props.disabled) return;
   state.checked = !state.checked;
   emits('onChange', state.checked);
+  emits('update:checked', state.checked);
 }
 
 const rxTrackState = computed(() => (state.checked ? props.stateActive : props.stateInactive));
@@ -93,7 +99,7 @@ const rxDisabled = computed(() => (props.disabled ? props.stateDisabled : ''));
     type="button"
     :class="`${state.base} ${rxTrackState} ${width} ${state.height} ${state.padding} ${rounded} ${hover} ${rxDisabled} ${classes}`"
     role="switch"
-    :aria-checked="state.checked"
+    :aria-checked="checked"
     :aria-labelledby="labelledby"
     :aria-describedby="describedby"
     @click="toggle"

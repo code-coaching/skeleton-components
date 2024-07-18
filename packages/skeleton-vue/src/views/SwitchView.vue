@@ -37,6 +37,15 @@ const compact = ref(false);
         />
       </label>
       <hr class="hr" />
+      <label for="disturb-vue" class="flex items-center justify-between gap-4 label">
+        <p>Vue specific two-way binding.</p>
+        <Switch
+          id="disturb"
+          name="disturb"
+          v-model:checked="disturb"
+        />
+      </label>
+      <hr class="hr" />
       <label for="notifications" class="flex items-center justify-between gap-4 label">
         <p>Defaults to active state.</p>
         <Switch
