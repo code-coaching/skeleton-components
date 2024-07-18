@@ -14,8 +14,8 @@ const props = withDefaults(defineProps<SwitchProps>(), {
   disabled: false,
   compact: false,
   // Aria
-  labelledby: undefined,
-  describedby: undefined,
+  labelledBy: undefined,
+  describedBy: undefined,
   // Root (Track)
   base: 'cursor-pointer transition duration-200',
   stateInactive: 'preset-filled-surface-200-800',
@@ -100,8 +100,8 @@ const rxDisabled = computed(() => (props.disabled ? props.stateDisabled : ''));
     :class="`${state.base} ${rxTrackState} ${width} ${state.height} ${state.padding} ${rounded} ${hover} ${rxDisabled} ${classes}`"
     role="switch"
     :aria-checked="checked"
-    :aria-labelledby="labelledby"
-    :aria-describedby="describedby"
+    :aria-labelledby="labelledBy"
+    :aria-describedby="describedBy"
     @click="toggle"
     data-testid="switch"
   >
