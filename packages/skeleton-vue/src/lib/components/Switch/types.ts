@@ -66,7 +66,7 @@ export interface SwitchProps {
 
   // Events ---
   /** Triggers when the switch is toggled. */
-  // onCheckedChange?: (event: boolean) => void;
+  // onChange?: (event: boolean) => void;
 
   // // Snippets ---
   // /** The inactive state children. */
