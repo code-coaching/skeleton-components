@@ -52,9 +52,9 @@ function onModeChange(newValue: boolean) {
           <!-- <RouterLink class="anchor" to="/components/accordions">Accordions</RouterLink>
 				<RouterLink class="anchor" to="/components/avatars">Avatars</RouterLink>
 				<RouterLink class="anchor" to="/components/app-bars">App Bars</RouterLink>
-				<RouterLink class="anchor" to="/components/navigation">Navigation</RouterLink>
+				<RouterLink class="anchor" to="/components/navigation">Navigation</RouterLink>-->
 				<RouterLink class="anchor" to="/components/progress">Progress</RouterLink>
-				<RouterLink class="anchor" to="/components/progress-rings">Progress Rings</RouterLink>
+				<!-- <RouterLink class="anchor" to="/components/progress-rings">Progress Rings</RouterLink>
 				<RouterLink class="anchor" to="/components/segment-control">Segment Control</RouterLink> -->
           <a class="cursor-pointer anchor" @click="router.push({ name: 'switch' })">Switch</a>
           <!-- <RouterLink class="anchor" to="/components/tabs">Tabs</RouterLink>

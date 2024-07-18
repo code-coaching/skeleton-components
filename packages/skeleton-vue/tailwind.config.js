@@ -9,7 +9,7 @@ export default {
     extend: {},
   },
   plugins: [
-    // require('@tailwindcss/forms'),
+    require('@tailwindcss/forms'),
     skeleton({
       themes: [themes.cerberus, themes.catppuccin, themes.pine, themes.rose],
     }),
