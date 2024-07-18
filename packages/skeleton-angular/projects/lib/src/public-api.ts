@@ -3,3 +3,4 @@
  */
 
 export * from './lib/switch/switch.component';
+export * from './lib/progress/progress.component';

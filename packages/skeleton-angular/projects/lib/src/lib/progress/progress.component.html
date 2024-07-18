@@ -1,0 +1,20 @@
+<div
+  role="progressbar"
+  [attr.aria-labelledby]="labelledBy"
+  [attr.aria-valuenow]="value"
+  aria-valuemin="0"
+  [attr.aria-valuemax]="max"
+  [ngClass]="[base, bg, width, height, rounded, classes]"
+>
+  <div
+    [ngClass]="[
+      meterBase,
+      meterBg,
+      meterRounded,
+      meterTransition,
+      rxIndeterminate,
+      meterClasses
+    ]"
+    [ngStyle]="{ width: fillPercentage }"
+  ></div>
+</div>

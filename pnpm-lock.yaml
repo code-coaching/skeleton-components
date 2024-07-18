@@ -61,6 +61,9 @@ importers:
       '@skeletonlabs/skeleton':
         specifier: ^3.0.0-next.1
         version: 3.0.0-next.1(postcss@8.4.39)(tailwindcss@3.4.5)
+      '@tailwindcss/forms':
+        specifier: ^0.5.7
+        version: 0.5.7(tailwindcss@3.4.5)
       '@types/jasmine':
         specifier: ~5.1.0
         version: 5.1.4
@@ -7691,6 +7694,11 @@ snapshots:
     dependencies:
       mini-svg-data-uri: 1.4.4
       tailwindcss: 3.4.4
+
+  '@tailwindcss/forms@0.5.7(tailwindcss@3.4.5)':
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.4.5
 
   '@tootallnate/once@2.0.0': {}
 
