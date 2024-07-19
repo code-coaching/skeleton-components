@@ -1,0 +1,107 @@
+<div class="space-y-10">
+  <h1 class="h1">App Bar</h1>
+
+  <section class="space-y-4">
+    <skeleton-app-bar>
+      <ng-template #lead>
+        <span><lucide-angular name="skull" [size]="22" /></span>
+        <span>Skeleton</span>
+      </ng-template>
+      Skeleton
+      <ng-template #trail>
+        <span>Skeleton</span>
+        <span><lucide-angular name="skull" [size]="22" /></span>
+      </ng-template>
+    </skeleton-app-bar>
+  </section>
+
+  <section class="space-y-4">
+    <h3 class="h3">Headline</h3>
+    <skeleton-app-bar headlineBase="text-center">
+      <ng-template #lead>
+        <span><lucide-angular name="skull" [size]="22" /></span>
+        <span>Skeleton</span>
+      </ng-template>
+      <ng-template #trail>
+        <span>Skeleton</span>
+        <span><lucide-angular name="skull" [size]="22" /></span>
+      </ng-template>
+      <ng-template #headline>
+        <h1 class="h1">Headline</h1>
+      </ng-template>
+    </skeleton-app-bar>
+  </section>
+
+  <section class="space-y-4">
+    <h3 class="h3">Sticky</h3>
+    <div class="flex flex-col space-y-4 overflow-y-auto max-h-64">
+      <skeleton-app-bar class="sticky top-0">
+        <ng-template #lead>
+          <span><lucide-angular name="skull" [size]="22" /></span>
+          <span>Skeleton</span>
+        </ng-template>
+        Skeleton
+        <ng-template #trail>
+          <span>Skeleton</span>
+          <span><lucide-angular name="skull" [size]="22" /></span>
+        </ng-template>
+      </skeleton-app-bar>
+      <div>First line of the sticky skeleton-app-bar</div>
+      @for (i of Array(10); let index = $index; track index) {
+        <div>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum minima
+          suscipit ipsam ut reiciendis a quia maiores, facere adipisci accusamus
+          animi nam porro cum dignissimos! Quibusdam asperiores aliquam
+          reiciendis eligendi!
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="space-y-8">
+    <h3 class="h3">A11Y Keyboard</h3>
+    <button type="button" class="btn preset-filled">
+      Button before the skeleton-app-bar
+    </button>
+    <skeleton-app-bar>
+      <ng-template #lead>
+        <button type="button" class="btn-icon preset-filled-primary-500">
+          <lucide-angular name="skull" [size]="22" />
+        </button>
+        <button type="button" class="btn preset-filled">Skeleton</button>
+      </ng-template>
+      Skeleton
+      <ng-template #trail>
+        <button type="button" class="btn preset-filled">Skeleton</button>
+        <button type="button" class="btn-icon preset-filled-primary-500">
+          <lucide-angular name="skull" [size]="22" />
+        </button>
+      </ng-template>
+    </skeleton-app-bar>
+    <button type="button" class="btn preset-filled">
+      Button after the skeleton-app-bar
+    </button>
+  </section>
+
+  <h3 class="h3">RTL</h3>
+  <div dir="rtl">
+    <skeleton-app-bar>
+      <ng-template #lead>
+        <button type="button" class="btn-icon preset-filled-primary-500">
+          <lucide-angular name="skull" [size]="22" />
+        </button>
+        <button type="button" class="btn preset-filled">lead</button>
+      </ng-template>
+      Skeleton
+      <ng-template #trail>
+        <button type="button" class="btn preset-filled">trail</button>
+        <button type="button" class="btn-icon preset-filled-primary-500">
+          <lucide-angular name="skull" [size]="22" />
+        </button>
+      </ng-template>
+      <ng-template #headline>
+        <h1 class="h1">مرحبا بك</h1>
+      </ng-template>
+    </skeleton-app-bar>
+  </div>
+</div>

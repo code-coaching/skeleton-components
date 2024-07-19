@@ -10,7 +10,7 @@ import { SwitchProps } from './types';
 import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
-  selector: 'switch',
+  selector: 'skeleton-switch',
   standalone: true,
   imports: [NgTemplateOutlet],
   templateUrl: './switch.component.html',
@@ -58,7 +58,7 @@ export class Switch {
 
   // Events - This are @Output() in Angular, found in the properties of the component
   // onCheckedChange: () => {}
-  @Output() onCheckedChange = new EventEmitter<boolean>();
+  @Output() onChange = new EventEmitter<boolean>();
 
   // Snippets - This is achieved through (named) content projection
   // inactiveChild,
@@ -67,7 +67,6 @@ export class Switch {
   @ContentChild('activeChild', { read: TemplateRef }) activeChild!: TemplateRef<any>;
 
   ngOnInit() {
-    this.checked = this.checked;
     if (this.compact) {
       this.setCompactMode();
     }
@@ -85,7 +84,7 @@ export class Switch {
   toggle() {
     if (this.disabled) return;
     this.checked = !this.checked;
-    this.onCheckedChange.emit(this.checked);
+    this.onChange.emit(this.checked);
   }
 
   get rxTrackState(): string {

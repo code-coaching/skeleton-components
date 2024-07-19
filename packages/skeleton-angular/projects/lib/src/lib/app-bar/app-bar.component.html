@@ -1,0 +1,31 @@
+<header
+  [ngClass]="[base, background, spaceY, border, padding, shadow, classes]"
+  role="toolbar"
+  data-testid="app-bar"
+>
+  <section
+    [ngClass]="[toolbarBase, toolbarGridCols, toolbarGap, toolbarClasses]"
+  >
+    @if (lead) {
+      <div [ngClass]="[leadBase, leadSpaceX, leadPadding, leadClasses]">
+        <ng-container [ngTemplateOutlet]="lead"></ng-container>
+      </div>
+    }
+
+    <div [ngClass]="[centerBase, centerAlign, centerPadding, centerClasses]">
+      <ng-content></ng-content>
+    </div>
+
+    @if (trail) {
+      <div [ngClass]="[trailBase, trailSpaceX, trailPadding, trailClasses]">
+        <ng-container [ngTemplateOutlet]="trail"></ng-container>
+      </div>
+    }
+  </section>
+
+  @if (headline) {
+    <section [ngClass]="[headlineBase, headlineClasses]">
+      <ng-container [ngTemplateOutlet]="headline"></ng-container>
+    </section>
+  }
+</header>

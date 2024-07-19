@@ -15,12 +15,12 @@
   <section class="space-y-4">
     <label for="disturb" class="flex items-center justify-between gap-4 label">
       <p>Defaults to inactive state.</p>
-      <switch
+      <skeleton-switch
         id="disturb"
         name="disturb"
         [checked]="disturb"
-        (onCheckedChange)="disturb = $event"
-      ></switch>
+        (onChange)="disturb = $event"
+      ></skeleton-switch>
     </label>
     <hr class="hr" />
     <label
@@ -28,33 +28,33 @@
       class="flex items-center justify-between gap-4 label"
     >
       <p>Defaults to active state.</p>
-      <switch
+      <skeleton-switch
         id="notifications"
         name="notifications"
         [checked]="notifications"
-        (onCheckedChange)="notifications = $event"
-      ></switch>
+        (onChange)="notifications = $event"
+      ></skeleton-switch>
     </label>
     <hr class="hr" />
     <label for="disabled" class="flex items-center justify-between gap-4 label">
       <p>Uses the disabled state.</p>
-      <switch
+      <skeleton-switch
         id="disabled"
         name="disabled"
         [checked]="disabled"
-        (onCheckedChange)="disabled = $event"
+        (onChange)="disabled = $event"
         [disabled]="true"
-      ></switch>
+      ></skeleton-switch>
     </label>
     <hr class="hr" />
     <label for="icons" class="flex items-center justify-between gap-4 label">
       <p>Custom Icons</p>
-      <switch
+      <skeleton-switch
         id="icons"
         name="icons"
         stateActive="bg-secondary-500"
         [checked]="icons"
-        (onCheckedChange)="icons = $event"
+        (onChange)="icons = $event"
       >
         <ng-template #inactiveChild>
           <lucide-angular name="x" size="14"></lucide-angular>
@@ -62,17 +62,17 @@
         <ng-template #activeChild>
           <lucide-angular name="check" size="14" color="blue"></lucide-angular>
         </ng-template>
-      </switch>
+      </skeleton-switch>
     </label>
     <hr class="hr" />
     <label for="mode" class="flex items-center justify-between gap-4 label">
       <p>Lightswitch</p>
-      <switch
+      <skeleton-switch
         id="mode"
         name="mode"
         stateActive="bg-surface-200"
         [checked]="lightswitch"
-        (onCheckedChange)="lightswitch = $event"
+        (onChange)="lightswitch = $event"
       >
         <ng-template #inactiveChild>
           <lucide-angular name="moon" size="14"></lucide-angular>
@@ -80,16 +80,16 @@
         <ng-template #activeChild>
           <lucide-angular name="sun" size="14"></lucide-angular>
         </ng-template>
-      </switch>
+      </skeleton-switch>
     </label>
     <hr class="hr" />
     <label for="compact" class="flex items-center justify-between gap-4 label">
       <p>Compact</p>
-      <switch
+      <skeleton-switch
         id="compact"
         name="compact"
         [checked]="compact"
-        (onCheckedChange)="compact = $event"
+        (onChange)="compact = $event"
         width="w-9"
         [compact]="true"
       >
@@ -99,7 +99,7 @@
         <ng-template #activeChild>
           <lucide-angular name="smile" size="18"></lucide-angular>
         </ng-template>
-      </switch>
+      </skeleton-switch>
     </label>
   </section>
 </div>
