@@ -22,9 +22,9 @@ function onModeChange(newValue: boolean) {
   <div class="grid h-screen grid-cols-[320px_minmax(0,_1fr)]">
     <!-- Nav -->
     <div class="p-8 space-y-8 overflow-y-auto bg-surface-100-900">
-      <a class="p-2 font-mono font-bold text-white bg-[#42b883] type-scale-3" href="/"
-        >skeleton-vue</a
-      >
+      <a class="p-2 font-mono font-bold text-white bg-[#42b883] type-scale-3" href="/">
+        skeleton-vue
+      </a>
       <hr class="hr" />
       <label class="flex items-center justify-between gap-4 label" for="mode">
         <p>Set Mode</p>
@@ -50,11 +50,11 @@ function onModeChange(newValue: boolean) {
         <nav class="flex flex-col gap-2 type-scale-2">
           <!-- <a class="anchor" href="/components/test">Test</a> -->
           <!-- <RouterLink class="anchor" to="/components/accordions">Accordions</RouterLink>
-				<RouterLink class="anchor" to="/components/avatars">Avatars</RouterLink>
-				<RouterLink class="anchor" to="/components/app-bars">App Bars</RouterLink>
-				<RouterLink class="anchor" to="/components/navigation">Navigation</RouterLink>-->
-				<RouterLink class="anchor" to="/components/progress">Progress</RouterLink>
-				<!-- <RouterLink class="anchor" to="/components/progress-rings">Progress Rings</RouterLink>
+				<RouterLink class="anchor" to="/components/avatars">Avatars</RouterLink> -->
+          <a class="cursor-pointer anchor" @click="router.push({ name: 'app-bar' })">App Bars</a>
+          <!-- <RouterLink class="anchor" to="/components/navigation">Navigation</RouterLink>-->
+          <a class="cursor-pointer anchor" @click="router.push({ name: 'progress' })">Progress</a>
+          <!-- <RouterLink class="anchor" to="/components/progress-rings">Progress Rings</RouterLink>
 				<RouterLink class="anchor" to="/components/segment-control">Segment Control</RouterLink> -->
           <a class="cursor-pointer anchor" @click="router.push({ name: 'switch' })">Switch</a>
           <!-- <RouterLink class="anchor" to="/components/tabs">Tabs</RouterLink>

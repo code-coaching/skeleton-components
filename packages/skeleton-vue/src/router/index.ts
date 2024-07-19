@@ -22,6 +22,11 @@ const router = createRouter({
           name: 'progress',
           component: () => import('../views/ProgressView.vue'),
         },
+        {
+          path: 'app-bar',
+          name: 'app-bar',
+          component: () => import('../views/AppBarView.vue'),
+        }
       ],
     },
   ],
