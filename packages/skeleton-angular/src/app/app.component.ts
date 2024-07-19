@@ -14,7 +14,6 @@ export class AppComponent {
   lightMode = false;
 
   onModeChange(newValue: boolean) {
-    console.log('onModeChange', newValue);
     this.lightMode = newValue;
     if (this.lightMode) {
       document.documentElement.classList.remove('dark');
