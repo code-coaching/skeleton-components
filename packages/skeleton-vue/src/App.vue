@@ -53,8 +53,8 @@ function onModeChange(newValue: boolean) {
           <a class="cursor-pointer anchor" @click="router.push({ name: 'app-bar' })">App Bars</a>
           <!-- <RouterLink class="anchor" to="/components/navigation">Navigation</RouterLink>-->
           <a class="cursor-pointer anchor" @click="router.push({ name: 'progress' })">Progress</a>
-          <!-- <RouterLink class="anchor" to="/components/progress-rings">Progress Rings</RouterLink>
-				<RouterLink class="anchor" to="/components/segment-control">Segment Control</RouterLink> -->
+          <a class="cursor-pointer anchor" @click="router.push({ name: 'progress-ring' })">Progress Rings</a>
+				<!-- <RouterLink class="anchor" to="/components/segment-control">Segment Control</RouterLink> -->
           <a class="cursor-pointer anchor" @click="router.push({ name: 'switch' })">Switch</a>
           <!-- <RouterLink class="anchor" to="/components/tabs">Tabs</RouterLink>
 				<RouterLink class="anchor" to="/components/ratings">Ratings</RouterLink> -->
