@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { SwitchComponent } from './pages/switch/switch.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { AppBarComponent } from './pages/app-bar/app-bar.component';
+import { AvatarComponent } from './pages/avatar/avatar.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,10 @@ export const routes: Routes = [
       {
         path: 'app-bar',
         component: AppBarComponent
+      },
+      {
+        path: 'avatar',
+        component: AvatarComponent
       },
     ],
   },

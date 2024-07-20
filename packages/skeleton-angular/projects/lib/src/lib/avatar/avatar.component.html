@@ -1,0 +1,16 @@
+<figure
+  [ngClass]="[base, background, size, font, border, rounded, shadow, classes]"
+  data-testId="avatar"
+>
+  @if (src) {
+    <img
+      v-if="src"
+      [ngClass]="[imageBase, imageClasses]"
+      [src]="src"
+      [alt]="alt"
+      [ngStyle]="{ filter: styleFilter }"
+    />
+  } @else {
+    <ng-content></ng-content>
+  }
+</figure>
