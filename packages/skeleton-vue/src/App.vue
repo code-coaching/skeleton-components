@@ -32,7 +32,7 @@ function onModeChange(newValue: boolean) {
           name="mode"
           stateActive="bg-surface-200"
           :checked="lightMode"
-          @on-checked-change="onModeChange"
+          @on-change="onModeChange"
         >
           <template #inactiveChild>
             <IconMoon :size="14" />

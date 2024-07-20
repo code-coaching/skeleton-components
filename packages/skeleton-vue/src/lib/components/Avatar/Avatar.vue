@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { AvatarProps } from './types';
 
-const props = withDefaults(defineProps<AvatarProps>(), {
+withDefaults(defineProps<AvatarProps>(), {
   src: '',
   alt: '',
   filter: '',

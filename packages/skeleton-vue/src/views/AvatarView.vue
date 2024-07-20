@@ -13,7 +13,7 @@ const horizontalImgSrc =
 <template>
   <div class="space-y-10">
     <header>
-      <h1 class="h1">Switch</h1>
+      <h1 class="h1">Avatar</h1>
     </header>
 
     <!-- Filter example -->
