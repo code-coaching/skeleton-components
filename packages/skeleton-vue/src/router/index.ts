@@ -26,7 +26,12 @@ const router = createRouter({
           path: 'app-bar',
           name: 'app-bar',
           component: () => import('../views/AppBarView.vue'),
-        }
+        },
+        {
+          path: 'avatar',
+          name: 'avatar',
+          component: () => import('../views/AvatarView.vue'),
+        },
       ],
     },
   ],

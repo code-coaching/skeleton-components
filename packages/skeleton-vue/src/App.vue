@@ -48,8 +48,8 @@ function onModeChange(newValue: boolean) {
         <span class="font-bold">Components</span>
         <nav class="flex flex-col gap-2 type-scale-2">
           <!-- <a class="anchor" href="/components/test">Test</a> -->
-          <!-- <RouterLink class="anchor" to="/components/accordions">Accordions</RouterLink>
-				<RouterLink class="anchor" to="/components/avatars">Avatars</RouterLink> -->
+          <!-- <RouterLink class="anchor" to="/components/accordions">Accordions</RouterLink> -->
+          <a class="cursor-pointer anchor" @click="router.push({ name: 'avatar' })">Avatars</a>
           <a class="cursor-pointer anchor" @click="router.push({ name: 'app-bar' })">App Bars</a>
           <!-- <RouterLink class="anchor" to="/components/navigation">Navigation</RouterLink>-->
           <a class="cursor-pointer anchor" @click="router.push({ name: 'progress' })">Progress</a>
