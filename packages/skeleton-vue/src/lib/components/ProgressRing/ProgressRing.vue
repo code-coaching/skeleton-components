@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ref, watch } from 'vue';
+import { computed } from 'vue';
 import type { ProgressRingProps } from './types';
 
 const props = withDefaults(defineProps<ProgressRingProps>(), {
@@ -42,14 +42,7 @@ const props = withDefaults(defineProps<ProgressRingProps>(), {
 const baseSize = 512; // px
 const radius = computed(() => baseSize / 2 - props.strokeWidth / 2);
 const circumference = computed(() => radius.value * 2 * Math.PI);
-const dashoffset = ref(calcDashOffset());
-
-watch(
-  () => props.value,
-  () => {
-    dashoffset.value = calcDashOffset();
-  },
-);
+const dashoffset = computed(() => calcDashOffset());
 
 function calcDashOffset() {
   const v = props.value !== undefined ? props.value : 25;
