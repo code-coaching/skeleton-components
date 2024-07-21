@@ -37,6 +37,11 @@ const router = createRouter({
           name: 'progress-ring',
           component: () => import('../views/ProgressRingView.vue'),
         },
+        {
+          path: 'navigation',
+          name: 'navigation',
+          component: () => import('../views/NavigationView.vue'),
+        },
       ],
     },
   ],
