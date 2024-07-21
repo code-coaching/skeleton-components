@@ -15,7 +15,7 @@ function onChangeHandler(value: string) {
 <template>
   <div class="space-y-10">
     <header>
-      <h1 class="h1">Switch</h1>
+      <h1 class="h1">Navigation</h1>
     </header>
 
     <section class="space-y-4">
