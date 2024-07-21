@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
-import { SwitchComponent } from './pages/switch/switch.component';
-import { ProgressComponent } from './pages/progress/progress.component';
 import { AppBarComponent } from './pages/app-bar/app-bar.component';
 import { AvatarComponent } from './pages/avatar/avatar.component';
+import { ProgressRingComponent } from './pages/progress-ring/progress-ring.component';
+import { ProgressComponent } from './pages/progress/progress.component';
+import { SwitchComponent } from './pages/switch/switch.component';
 
 export const routes: Routes = [
   {
@@ -10,19 +11,23 @@ export const routes: Routes = [
     children: [
       {
         path: 'switch',
-        component: SwitchComponent
+        component: SwitchComponent,
       },
       {
         path: 'progress',
-        component: ProgressComponent
+        component: ProgressComponent,
       },
       {
         path: 'app-bar',
-        component: AppBarComponent
+        component: AppBarComponent,
       },
       {
         path: 'avatar',
-        component: AvatarComponent
+        component: AvatarComponent,
+      },
+      {
+        path: 'progress-ring',
+        component: ProgressRingComponent,
       },
     ],
   },

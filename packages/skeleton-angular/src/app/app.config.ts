@@ -14,6 +14,7 @@ import {
   Skull,
   Smile,
   Sun,
+  ThermometerSun,
   X,
 } from 'lucide-angular';
 import { routes } from './app.routes';
@@ -32,6 +33,7 @@ export const appConfig: ApplicationConfig = {
         Sun,
         X,
         Skull,
+        ThermometerSun,
       }),
     ),
   ],

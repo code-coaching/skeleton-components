@@ -1,0 +1,60 @@
+<figure
+  [ngClass]="[base, size, classes]"
+  role="meter"
+  [attr.aria-labelledby]="labelledBy"
+  [attr.aria-valuenow]="value || 0"
+  [attr.aria-valuemin]="0"
+  [attr.aria-valuemax]="max"
+  [attr.aria-valuetext]="rxValueMax"
+  data-testid="progress-ring"
+>
+  <!-- Slot -->
+  @if (children) {
+    <div [ngClass]="[childrenBase, size, childrenClasses]">
+      <ng-container [ngTemplateOutlet]="children"></ng-container>
+    </div>
+  }
+  <!-- SVG -->
+  <svg [attr.viewBox]="rxSvgViewBox" [ngClass]="rxSvgClass">
+    <!-- Track -->
+    <circle
+      [ngClass]="[trackBase, trackStroke, trackClasses]"
+      [attr.stroke-width]="strokeWidth"
+      [attr.r]="radius"
+      cx="50%"
+      cy="50%"
+    />
+    <!-- Meter -->
+    <circle
+      [ngClass]="[
+        meterBase,
+        meterStroke,
+        meterTransition,
+        meterDuration,
+        meterClasses
+      ]"
+      [attr.r]="radius"
+      cx="50%"
+      cy="50%"
+      [attr.stroke-width]="strokeWidth"
+      [attr.stroke-linecap]="strokeLinecap"
+      [attr.stroke-dasharray]="[circumference, circumference]"
+      [attr.stroke-dashoffset]="dashoffset"
+      [attr.transform]="rxTransform"
+    />
+    <!-- Text -->
+    @if (value && !children) {
+      <text
+        [ngClass]="[labelBase, labelFill, labelClasses]"
+        x="50%"
+        y="50%"
+        [attr.font-size]="labelFontSize"
+        [attr.font-weight]="labelFontWeight"
+        text-anchor="middle"
+        dominant-baseline="central"
+      >
+        {{ label ?? percentage(value) }}
+      </text>
+    }
+  </svg>
+</figure>

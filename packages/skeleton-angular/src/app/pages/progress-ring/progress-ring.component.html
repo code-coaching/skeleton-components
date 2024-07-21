@@ -1,0 +1,37 @@
+<div class="space-y-10">
+  <header>
+    <h1 class="h1">Progress Ring</h1>
+  </header>
+  <section class="grid grid-cols-2 gap-4">
+    <label class="label">
+      <span class="label-text">Value</span>
+      <input class="input" type="number" [(ngModel)]="value" />
+    </label>
+    <label class="label">
+      <span class="label-text">Max</span>
+      <input class="input" type="number" [(ngModel)]="max" />
+    </label>
+  </section>
+  <section class="space-y-4">
+    <skeleton-progress-ring [value]="value" [max]="max" />
+  </section>
+  <section class="space-y-4">
+    <h2 class="h2">Icons</h2>
+    <skeleton-progress-ring
+      [value]="value"
+      [max]="max"
+      meterStroke="stroke-error-500"
+    >
+      <ng-template #children>
+        <lucide-angular name="thermometer-sun" size="48" />
+      </ng-template>
+    </skeleton-progress-ring>
+  </section>
+  <section class="space-y-4">
+    <h2 class="h2">Indeterminate</h2>
+    <skeleton-progress-ring
+      meterStroke="stroke-tertiary-600-400"
+      trackStroke="stroke-tertiary-50-950"
+    />
+  </section>
+</div>
