@@ -1,9 +1,11 @@
 export interface AvatarProps {
-  /** Set avatar image source URL. */
+	/** Set avatar image source URL. */
   src?: string;
-  /** Set avatar image Alt text. */
-  alt?: string;
-  /** Set avatar image filter name. such as "#Apollo". */
+  /** The source set of the avatar image. */
+  srcset?: string;
+  /** Provide a name or username for the avatar. */
+  name: string;
+  /** Set avatar image filter name, such as: "#Apollo". */
   filter?: string;
 
   // Root ---
@@ -29,6 +31,12 @@ export interface AvatarProps {
   imageBase?: string;
   /** Provide avatar image arbitrary CSS classes. */
   imageClasses?: string;
+
+  // Fallback ---
+  /** Set base classes for the fallback element. */
+  fallbackBase?: string;
+  /** Provide arbitrary CSS classes to fallback element. */
+  fallbackClasses?: string;
 
   // Snippets ---
   /** The default child slot. */

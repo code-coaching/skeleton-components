@@ -83,25 +83,38 @@ const horizontalImgSrc =
 
     <!-- imageSrc -->
     <h3 class="h3">imageSrc</h3>
-    <Avatar :src="imgSrc" alt="skeleton" />
+    <Avatar :src="imgSrc" name="skeleton" />
 
     <!-- Initials -->
     <h3 class="h3">Initials</h3>
-    <Avatar font="text-4xl" classes="flex justify-center items-center h-16">SK</Avatar>
+    <Avatar font="text-4xl" classes="flex justify-center items-center h-16" name="initials"
+      >SK</Avatar
+    >
 
     <!-- Icon -->
     <h3 class="h3">Icon</h3>
-    <Avatar classes="flex justify-center items-center h-16"><Skull :size="48" /></Avatar>
+    <Avatar classes="flex justify-center items-center h-16" name="icon"
+      ><Skull :size="48"
+    /></Avatar>
 
     <!-- filter -->
     <h3 class="h3">Filter</h3>
-    <Avatar :src="imgSrc" alt="skeleton" filter="#NoirLight" />
+    <Avatar :src="imgSrc" name="skeleton" filter="#NoirLight" />
+
+    <!-- Fallback -->
+    <h3 class="h3">Fallback</h3>
+    <div class="flex flex-wrap gap-4">
+      <Avatar name="skeleton" />
+      <Avatar font="text-4xl" name="skeleton" />
+      <Avatar name="john duck" />
+      <Avatar font="text-4xl" name="john duck" />
+    </div>
 
     <!-- non-square aspect-ratio -->
     <h3 class="h3">non-square aspect-ratio</h3>
     <div class="flex space-x-4">
-      <Avatar size="w-16 h-32" :src="verticalImgSrc" alt="skeleton" />
-      <Avatar size="w-64 h-32" rounded="rounded-md" :src="horizontalImgSrc" alt="skeleton" />
+      <Avatar size="w-16 h-32" :src="verticalImgSrc" name="skeleton" />
+      <Avatar size="w-64 h-32" rounded="rounded-md" :src="horizontalImgSrc" name="skeleton" />
     </div>
   </div>
 </template>
