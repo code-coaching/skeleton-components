@@ -1,0 +1,91 @@
+<!-- <ng-container [ngSwitch]="element">
+  <a
+    *ngSwitchCase="'a'"
+    [ngClass]="componentClasses"
+    [href]="href"
+    [target]="target"
+    [attr.title]="title"
+    [attr.role]="role"
+    (click)="onClickHandler()"
+    tabindex="0"
+    data-testid="nav-tile"
+  >
+    <ng-content></ng-content>
+    <div *ngIf="label && !ctx.expanded()" [ngClass]="[labelBase, labelClasses]">
+      {{ label }}
+    </div>
+    <div
+      *ngIf="labelExpanded && ctx.expanded()"
+      [ngClass]="[labelExpandedBase, labelExpandedClasses]"
+    >
+      {{ labelExpanded }}
+    </div>
+  </a>
+
+  <button
+    *ngSwitchCase="'button'"
+    [ngClass]="componentClasses"
+    [attr.title]="title"
+    [attr.type]="type"
+    [attr.role]="role"
+    (click)="onClickHandler()"
+    tabindex="0"
+    data-testid="nav-tile"
+  >
+    <ng-content></ng-content>
+    <div *ngIf="label && !ctx.expanded()" [ngClass]="[labelBase, labelClasses]">
+      {{ label }}
+    </div>
+    <div
+      *ngIf="labelExpanded && ctx.expanded()"
+      [ngClass]="[labelExpandedBase, labelExpandedClasses]"
+    >
+      {{ labelExpanded }}
+    </div>
+  </button>
+</ng-container> -->
+<ng-container [ngSwitch]="element">
+
+  <!-- Define the common structure in an ng-template -->
+  <ng-template #commonContent>
+    <ng-content></ng-content>
+    <div *ngIf="label && !ctx.expanded()" [ngClass]="[labelBase, labelClasses]">
+      {{ label }}
+    </div>
+    <div
+      *ngIf="labelExpanded && ctx.expanded()"
+      [ngClass]="[labelExpandedBase, labelExpandedClasses]"
+    >
+      {{ labelExpanded }}
+    </div>
+  </ng-template>
+
+  <!-- Use the ng-template within ngSwitchCase -->
+  <a
+    *ngSwitchCase="'a'"
+    [ngClass]="componentClasses"
+    [href]="href"
+    [target]="target"
+    [attr.title]="title"
+    [attr.role]="role"
+    (click)="onClickHandler()"
+    tabindex="0"
+    data-testid="nav-tile"
+  >
+    <ng-container *ngTemplateOutlet="commonContent"></ng-container>
+  </a>
+
+  <button
+    *ngSwitchCase="'button'"
+    [ngClass]="componentClasses"
+    [attr.title]="title"
+    [attr.type]="type"
+    [attr.role]="role"
+    (click)="onClickHandler()"
+    tabindex="0"
+    data-testid="nav-tile"
+  >
+    <ng-container *ngTemplateOutlet="commonContent"></ng-container>
+  </button>
+
+</ng-container>

@@ -1,0 +1,139 @@
+<div class="space-y-10">
+  <header>
+    <h1 class="h1">Navigation</h1>
+  </header>
+
+  <section class="space-y-4">
+    <h2 class="h2">Bar</h2>
+    <pre class="pre">value: {{ navBarModel }}</pre>
+    <div class="w-[320px]">
+      <skeleton-nav-bar
+        [value]="navBarModel"
+        (onChange)="onChangeHandler($event)"
+      >
+        <skeleton-nav-tile
+          id="0"
+          label="Tile 1"
+          labelExpanded="Expanded Tile 1"
+        >
+          <lucide-angular name="box"></lucide-angular>
+        </skeleton-nav-tile>
+        <skeleton-nav-tile
+          id="1"
+          label="Tile 2"
+          labelExpanded="Expanded Tile 2"
+        >
+          <lucide-angular name="box"></lucide-angular>
+        </skeleton-nav-tile>
+        <skeleton-nav-tile
+          id="2"
+          label="Tile 3"
+          labelExpanded="Expanded Tile 3"
+        >
+          <lucide-angular name="box"></lucide-angular>
+        </skeleton-nav-tile>
+        <skeleton-nav-tile
+          id="3"
+          label="Tile 4"
+          labelExpanded="Expanded Tile 4"
+        >
+          <lucide-angular name="box"></lucide-angular>
+        </skeleton-nav-tile>
+      </skeleton-nav-bar>
+    </div>
+    <skeleton-nav-bar
+      [value]="navBarModel"
+      (onChange)="onChangeHandler($event)"
+    >
+      <skeleton-nav-tile id="0" label="Tile 1" labelExpanded="Expanded Tile 1">
+        <lucide-angular name="box"></lucide-angular>
+      </skeleton-nav-tile>
+      <skeleton-nav-tile id="1" label="Tile 2" labelExpanded="Expanded Tile 2">
+        <lucide-angular name="box"></lucide-angular>
+      </skeleton-nav-tile>
+      <skeleton-nav-tile id="2" label="Tile 3" labelExpanded="Expanded Tile 3">
+        <lucide-angular name="box"></lucide-angular>
+      </skeleton-nav-tile>
+      <skeleton-nav-tile id="3" label="Tile 4" labelExpanded="Expanded Tile 4">
+        <lucide-angular name="box"></lucide-angular>
+      </skeleton-nav-tile>
+      <skeleton-nav-tile id="4" label="Tile 5" labelExpanded="Expanded Tile 5">
+        <lucide-angular name="box"></lucide-angular>
+      </skeleton-nav-tile>
+    </skeleton-nav-bar>
+  </section>
+
+  <section class="space-y-4">
+    <header class="flex justify-between">
+      <h2 class="h2">Rail</h2>
+      <button class="btn preset-filled" (click)="toggleExpanded()">
+        Toggle Expanded
+      </button>
+    </header>
+    <div class="flex h-[960px] justify-center gap-10">
+      <!-- Expanded -->
+      <skeleton-nav-rail [expanded]="expanded" classes="transition-all">
+        <ng-template #header>
+          <a
+            href="/"
+            class="flex flex-col items-center justify-center w-full gap-2 aspect-square"
+          >
+            @if (!expanded) {
+              <lucide-angular name="skull" [size]="24" />
+            }
+            @if (expanded) {
+              <lucide-angular name="skull" [size]="48" />
+            }
+            <span [ngClass]="headerLogo"> Skeleton </span>
+          </a>
+        </ng-template>
+        <ng-template #tiles>
+          <skeleton-nav-tile
+            label="Tile 1"
+            labelExpanded="Expanded Tile 1"
+            href="/page/1"
+            [selected]="true"
+          >
+            <lucide-angular name="box"></lucide-angular>
+          </skeleton-nav-tile>
+          <skeleton-nav-tile
+            label="Tile 2"
+            labelExpanded="Expanded Tile 2"
+            href="/page/2"
+          >
+            <lucide-angular name="box"></lucide-angular>
+          </skeleton-nav-tile>
+          <skeleton-nav-tile
+            label="Tile 3"
+            labelExpanded="Expanded Tile 3"
+            href="/page/3"
+          >
+            <lucide-angular name="box"></lucide-angular>
+          </skeleton-nav-tile>
+          <skeleton-nav-tile
+            label="Tile 4"
+            labelExpanded="Expanded Tile 4"
+            href="/page/4"
+          >
+            <lucide-angular name="box"></lucide-angular>
+          </skeleton-nav-tile>
+          <skeleton-nav-tile
+            label="Tile 5"
+            labelExpanded="Expanded Tile 5"
+            href="/page/5"
+          >
+            <lucide-angular name="box"></lucide-angular>
+          </skeleton-nav-tile>
+        </ng-template>
+        <ng-template #footer>
+          <skeleton-nav-tile
+            href="/settings"
+            labelExpanded="Settings"
+          >
+            <lucide-angular href="/settings" name="settings" />
+          </skeleton-nav-tile>
+        </ng-template>
+      </skeleton-nav-rail>
+    </div>
+  </section>
+</div>

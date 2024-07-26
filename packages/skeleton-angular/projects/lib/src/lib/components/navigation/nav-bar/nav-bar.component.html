@@ -1,0 +1,17 @@
+<aside
+  [ngClass]="[base, background, width, height, padding, classes]"
+  data-testid="nav-bar"
+>
+  <nav
+    [ngClass]="[
+      tilesBase,
+      tilesFlexDirection,
+      tilesJustify,
+      tilesItems,
+      tilesGap,
+      tilesClasses
+    ]"
+  >
+    <ng-content></ng-content>
+  </nav>
+</aside>

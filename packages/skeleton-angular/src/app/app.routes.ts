@@ -4,6 +4,7 @@ import { AvatarComponent } from './pages/avatar/avatar.component';
 import { ProgressRingComponent } from './pages/progress-ring/progress-ring.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { SwitchComponent } from './pages/switch/switch.component';
+import { NavigationComponent } from './pages/navigation/navigation.component';
 
 export const routes: Routes = [
   {
@@ -28,6 +29,10 @@ export const routes: Routes = [
       {
         path: 'progress-ring',
         component: ProgressRingComponent,
+      },
+      {
+        path: 'navigation',
+        component: NavigationComponent
       },
     ],
   },

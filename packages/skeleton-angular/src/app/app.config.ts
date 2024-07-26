@@ -6,11 +6,13 @@ import {
 import { provideRouter } from '@angular/router';
 
 import {
+  Box,
   Check,
   Frown,
   Home,
   LucideAngularModule,
   Moon,
+  Settings,
   Skull,
   Smile,
   Sun,
@@ -34,6 +36,8 @@ export const appConfig: ApplicationConfig = {
         X,
         Skull,
         ThermometerSun,
+        Box,
+        Settings,
       }),
     ),
   ],

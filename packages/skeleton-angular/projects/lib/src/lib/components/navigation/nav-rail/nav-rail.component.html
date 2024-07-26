@@ -1,0 +1,49 @@
+<aside
+  [ngClass]="[base, background, height, padding, rxWidth, classes]"
+  data-testid="nav-rail"
+>
+  @if (header) {
+    <header
+      [ngClass]="[
+        headerBase,
+        headerFlexDirection,
+        headerJustify,
+        headerItems,
+        headerGap,
+        headerClasses
+      ]"
+    >
+      <ng-container [ngTemplateOutlet]="header"></ng-container>
+    </header>
+  }
+  <!-- Tiles -->
+  @if (tiles) {
+    <nav
+      [ngClass]="[
+        tilesBase,
+        tilesFlexDirection,
+        tilesJustify,
+        tilesItems,
+        tilesGap,
+        tilesClasses
+      ]"
+    >
+      <ng-container [ngTemplateOutlet]="tiles"></ng-container>
+    </nav>
+  }
+  <!-- Footer -->
+  @if (footer) {
+    <footer
+      [ngClass]="[
+        footerBase,
+        footerFlexDirection,
+        footerJustify,
+        footerItems,
+        footerGap,
+        footerClasses
+      ]"
+    >
+      <ng-container [ngTemplateOutlet]="footer"></ng-container>
+    </footer>
+  }
+</aside>
