@@ -45,7 +45,7 @@ export interface NavCommonProps {
 
 	// Events ---
 	/** Triggers when selection occurs. */
-	onchange?: (id: string) => void;
+	// onchange?: (id: string) => void;
 }
 
 export interface NavBarProps extends NavCommonProps {
