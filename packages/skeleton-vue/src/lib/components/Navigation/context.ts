@@ -1,4 +1,4 @@
-import { createContext } from '@/lib/internal/create-context';
+import { createContext } from '../../../lib/internal/create-context';
 import type { NavContext } from './types';
 
 export const [setNavigationContext, getNavigationContext, key] = createContext<NavContext>({
